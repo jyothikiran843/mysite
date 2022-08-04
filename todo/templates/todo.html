@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<h1>To do</h1>
+<form class="" action="" method="POST">
+    {% csrf_token %}
+    <div class="row p-2">
+        {{form}}
+        <input type="submit" value="Add" class="btn btn-primary">
+    </div>
+</form>
+<ul class="list-group">
+{% for task in tasks %}
+    <li class="list-group-item justify-content-between d-flex h4">{{task}}<a href="{% url 'delete' pk=task.pk %}" type="button"  class="btn btn-danger">Delete</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

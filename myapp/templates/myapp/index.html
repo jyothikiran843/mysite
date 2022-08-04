@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<form action="/" method="get" class="form-inline">
+    <input type="text" id="q" name="q" class="form-control" placeholder="search a student">
+    <input type="submit" class="form-control btn btn-primary">
+</form>
+{% for student in details %}
+<div class="card">
+    <div class="card-body">
+        <h2 class="card-title"><a href="{% url 'student' student.slug %}">{{student.name}}</a></h2>
+        <p class="card-text">{{student.father}}</p>
+        <a class="btn btn-warning" href="{% url 'edit' pk=student.pk %}">Change</a>
+        <a class="btn btn-danger" href="{% url 'delete' pk=student.pk %}">Delete</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
