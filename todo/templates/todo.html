@@ -10,7 +10,7 @@
 </form>
 <ul class="list-group">
 {% for task in tasks %}
-    <li class="list-group-item justify-content-between d-flex h4">{{task}}<a href="{% url 'delete' pk=task.pk %}" type="button"  class="btn btn-danger">Delete</a></li>
+    <li class="list-group-item justify-content-between d-flex h4">{{task}}<a href="{% url 'todo_delete' pk=task.pk %}" type="button"  class="btn btn-danger">Delete</a></li>
 {% endfor %}
 </ul>
 {% endblock %}

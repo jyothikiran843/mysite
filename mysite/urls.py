@@ -17,7 +17,7 @@ from unicodedata import name
 from django.contrib import admin
 from django.urls import path,include
 from myapp.views import delete, edit, index,get_student,create
-from todo.views import todolist,delete
+from todo.views import todolist,delete_task
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +27,5 @@ urlpatterns = [
     path('edit/<int:pk>',edit,name='edit'),
     path('delete/<int:pk>',delete,name='delete'),
     path('todo/',todolist,name='todo'),
-    path('delete/<int:pk>',delete,name='delete'),
+    path('todo/delete/<int:pk>',delete_task,name='todo_delete'),
 ]

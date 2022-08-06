@@ -18,7 +18,7 @@ def todolist(request):
     tasklu=task.objects.all()
     return render(request,'todo.html',{'form':input_task,'tasks':tasklu})
 
-def delete(request,pk=None):
+def delete_task(request,pk=None):
     if pk:
         tas=get_object_or_404(task,pk=pk)
         tas.delete()
